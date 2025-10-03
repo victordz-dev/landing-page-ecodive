@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecodive | LOGIN</title>
+  <link rel="stylesheet" crossorigin href="/landing-page-ecodive/assets/login-BV30wodP.css">
+</head>
+<body>
+<div class="login-container"> <!-- Container do formulário de login -->
+    <div id="padrao">
+        <p>Usuário padrão: usuario</p>
+        <p>Senha padrão: senha123</p>
+    </div>
+    <h2>Login</h2>
+    <form id="loginForm"> <!-- Formulário de login -->
+        <div class="input-group">
+            <label for="username">Usuário</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+        <div class="input-group">
+            <label for="senha">Senha</label>
+            <input type="password" id="senha" name="senha" required>
+        </div>
+        <button type="submit">Entrar</button>
+        <p id="mensagemErro" class="mensagemErro"></p> <!-- Exibe a mensagem de erro dinamicamente em JS-->
+    </form>
+</div>
+</body>
+<script src="./scripts/login.js"></script>
+</html>
