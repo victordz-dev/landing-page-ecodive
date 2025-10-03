@@ -1,65 +1,87 @@
-const menu = document.querySelector('.menu'); // Seleciona o menu
-const NavMenu = document.querySelector('.nav-menu'); // Seleciona o menu de navegação
+// --- LÓGICA DO MENU HAMBÚRGUER ---
+const menu = document.querySelector('.menu');
+const NavMenu = document.querySelector('.nav-menu');
 
-menu.addEventListener('click', () => { // Adiciona um evento de clique no menu
-    menu.classList.toggle('ativo'); // Adiciona ou remove a classe ativo no menu
-    NavMenu.classList.toggle('ativo'); // Adiciona ou remove a classe ativo no menu de navegação
-})
-
-let indexAtual = 0; // Índice do slide atual
-let intervaloSlides;  // Intervalo de tempo entre os slides
-
-function moverSlide(direcao) { // Função para mover o slide
-    const slides = document.querySelectorAll('.carrossel-item'); // Seleciona todos os slides
-    const totalSlides = slides.length; // Total de slides
-
-    slides[indexAtual].classList.remove('active'); // Remove a classe active do slide atual
-
-    indexAtual = (indexAtual + direcao + totalSlides) % totalSlides; // Calcula o índice do próximo slide
-
-    document.querySelector('.carrossel-inner').style.transform = `translateX(-${indexAtual * 100}%)`; // Move o slide
-
-    slides[indexAtual].classList.add('active'); // Adiciona a classe active ao próximo slide
-}
-
-function carrosselInicio() { // Função para iniciar o carrossel
-    intervaloSlides = setInterval(() => {
-        moverSlide(1);
-    }, 3000);
-}
-
-function carrosselPara() { // Função para parar o carrossel
-    clearInterval(intervaloSlides); 
-}
-
-window.onload = carrosselInicio; // Inicia o carrossel ao carregar a página
-
-document.querySelector('.carrossel').addEventListener('mouseover', carrosselPara); // Adiciona um evento de mouseover no carrossel
-
-document.querySelector('.carrossel').addEventListener('mouseout', carrosselInicio); // Adiciona um evento de mouseout no carrossel
-
-window.addEventListener('load', () => { 
-    document.querySelector('.navegação').style.opacity = 1; 
-  });
-window.addEventListener('load', () => {
-    document.querySelector('.inicio-titulo').style.opacity = 1;
-  });
-window.addEventListener('load', () => {
-    document.querySelector('.inicio-parag').style.opacity = 1;
-  });
-
-  function onScroll() { // Função para animar os elementos ao rolar a página
-    const elementos = document.querySelectorAll("*");
-    const windowHeight = window.innerHeight;  
-
-    elementos.forEach(elemento => {
-      const elementoTopo = elemento.getBoundingClientRect().top; // Obtém a posição do elemento em relação ao topo da janela
-
-      if (elementoTopo < windowHeight - 50) { // Verifica se o elemento está visível
-        elemento.classList.add('visible'); // Adiciona a classe visible ao elemento
-      }
+if (menu && NavMenu) {
+    menu.addEventListener('click', () => {
+        menu.classList.toggle('ativo');
+        NavMenu.classList.toggle('ativo');
     });
-  }
+}
 
-  window.addEventListener('scroll', onScroll); // Adiciona um evento de scroll na janela
-  window.addEventListener('load', onScroll); // Adiciona um evento de load na janela
+// --- LÓGICA DO CARROSSEL ---
+let indexAtual = 0;
+let intervaloSlides;
+
+function moverSlide(direcao) {
+    const slides = document.querySelectorAll('.carrossel-item');
+    const totalSlides = slides.length;
+    const carrosselInner = document.querySelector('.carrossel-inner');
+
+    if (totalSlides === 0 || !carrosselInner) return; // Evita erros
+
+    // A classe 'active' não é necessária para o efeito de slide, mas mantemos
+    slides[indexAtual].classList.remove('active');
+
+    indexAtual = (indexAtual + direcao + totalSlides) % totalSlides;
+
+    carrosselInner.style.transform = `translateX(-${indexAtual * 100}%)`;
+
+    slides[indexAtual].classList.add('active');
+}
+
+function carrosselInicio() {
+    clearInterval(intervaloSlides); // Garante que não haja múltiplos intervalos
+    intervaloSlides = setInterval(() => moverSlide(1), 3000);
+}
+
+function carrosselPara() {
+    clearInterval(intervaloSlides);
+}
+
+// Eventos de mouse e botões para o carrossel
+const carrossel = document.querySelector('.carrossel');
+if (carrossel) {
+    carrossel.addEventListener('mouseover', carrosselPara);
+    carrossel.addEventListener('mouseout', carrosselInicio);
+
+    const botaoAnterior = document.querySelector('.carrossel-btn.prev');
+    const botaoProximo = document.querySelector('.carrossel-btn.next');
+
+    if (botaoAnterior && botaoProximo) {
+        botaoAnterior.addEventListener('click', () => moverSlide(-1));
+        botaoProximo.addEventListener('click', () => moverSlide(1));
+    }
+}
+
+// --- ANIMAÇÕES DE SCROLL (USANDO INTERSECTION OBSERVER) ---
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, {
+    threshold: 0.1 // A animação dispara quando 10% do elemento estiver visível
+});
+
+const elementosAnimar = document.querySelectorAll('.animar-ao-rolar');
+elementosAnimar.forEach(el => observer.observe(el));
+
+
+// --- EVENTOS DE CARREGAMENTO DA PÁGINA ---
+window.addEventListener('load', () => {
+    // Animações de fade-in iniciais
+    const navegacao = document.querySelector('.navegação');
+    const titulo = document.querySelector('.inicio-titulo');
+    const parag = document.querySelector('.inicio-parag');
+
+    if (navegacao) navegacao.style.opacity = 1;
+    if (titulo) titulo.style.opacity = 1;
+    if (parag) parag.style.opacity = 1;
+
+    // Inicia o carrossel de imagens
+    if (carrossel) {
+        carrosselInicio();
+    }
+});
