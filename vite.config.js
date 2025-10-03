@@ -4,7 +4,6 @@ import { resolve } from 'path';
 export default defineConfig({
     root: 'src',
     base: '/landing-page-ecodive/',
-
     build: {
         outDir: '../dist',
         rollupOptions: {
