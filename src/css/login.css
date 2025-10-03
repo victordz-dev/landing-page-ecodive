@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* Raleway Font importada do google fonts */
+
+body {
+      font-family: "Raleway", sans-serif;
+    display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    background: #f0f0f0 linear-gradient(to bottom, #D9D9D9, #0A212C 90%, #06141B);
+}
+
+  /* Estilo do container de login */
+  .login-container {
+      background-color: #fff;
+      padding: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      border-radius: 5px;
+      width: 300px;
+  }
+  
+  /* Estilo do texto que exibe login e senha padrão */
+  #padrao {
+    color: gray;
+    font-size: smaller;
+    font-style: italic;
+  }
+
+  /* Estilo para parágrafos dentro do elemento com id 'padrao' */
+  #padrao p {
+    padding: 0;
+    margin: 0;
+  }
+
+    /* Estilo do título do formulário */
+  h2 {
+      margin-bottom: 20px;
+  }
+
+  /* Estilo do formulário */
+  .input-group {
+      margin-bottom: 15px;
+  }
+
+  /* Estilo do label e input */
+  .input-group label {
+      display: block;
+      margin-bottom: 5px;
+  }
+
+  /* Estilo do input */
+  .input-group input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+  }
+
+  /* Estilo do botão */
+  button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007BFF;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 5px;
+  }
+  
+  /* Estilo do botão ao passar o mouse */
+  button:hover {
+      background-color: #0056b3;
+  }
+  /* Estilo da mensagem de erro */
+  .mensagemErro {
+      color: red;
+      margin-top: 10px;
+      display: none;
+  }
+  

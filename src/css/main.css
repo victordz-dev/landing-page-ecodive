@@ -1,0 +1,942 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap'); /* importando fonte Raleway do google fonts*/
+
+* { 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Raleway", sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+ 
+body {
+    background-color: #06141B;
+}
+
+/* animação de fade-in */
+p {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+p.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+/* fim geral */
+
+/* header */
+
+.navegação {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px 50px;
+    width: 100%;
+    background-color: #06141B;
+    position: fixed;
+    opacity: 0;
+    transition: opacity 0.5s; 
+    z-index: 1;
+}
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 46px;
+}
+
+.nav-inicio {
+    color: white;
+    font-weight: 400;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.nav-item a{
+    color: white;
+    font-weight: 200;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.nav-inicio:hover {
+    color: rgb(157, 175, 169);
+}
+
+.nav-item a:hover {
+    color: rgb(157, 175, 169);
+}
+
+.menu {
+    cursor: pointer;
+    display: none;
+}
+.bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background-color: #D9D9D9;
+    margin: 5px auto;
+}
+
+/* fim header */
+
+/* inicio */
+
+.inicio {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/mar.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+
+.inicio-textos {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 50px;
+}
+
+.inicio-titulo {
+    font-size: 96px;
+    font-weight: 400;
+    color: white;
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.inicio-parag {
+    width: 509px;
+    height: 84px;
+    font-size: 35px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+/* fim inicio */
+
+/* problemática */
+
+.problematica {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #D9D9D9 , #0A212C 90%, #06141B);
+    display: flex;
+   justify-content: flex-start;
+}
+
+.problematica-direção {
+    display: flex;
+    width: 23px;
+}
+
+.problematica-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #06141B;
+}
+
+.problematica-textos {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding-left: 113px;
+    gap: 108px;
+}
+
+.problematica-titulo {
+    width: 390px;
+    height: 208px;
+    font-weight: 400;
+    font-size: 90px;
+    color: white;
+}
+
+.problematica-parags {
+    display: flex;
+    flex-direction: column;
+    gap:60px;
+}
+
+.problematica-parag1 {
+    width: 600px;
+    height: 119px;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+}
+
+.problematica-parag2 {
+    width: 580px;
+    height: 90px;
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+}
+
+span {
+    color: #06141B;
+}
+
+/* fim problemática */
+
+/* projeto */
+
+.projeto {
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(ellipse at left, #D9D9D9, #92acb8 -20%, #4a6672 -10%, #123140, #06141B 50%);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.projeto-direção {
+    display: flex;
+    width: 23px;
+}
+
+.projeto-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.projeto-textos {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 113px;
+    padding-top: 100px;
+    gap: 80px;
+}
+
+.projeto-titulo {
+    font-weight: 400;
+    font-size: 90px;
+    color: white;
+}
+
+.projeto-parag {
+    font-weight: 400;
+    font-size: 22px;
+    color: white;
+}
+
+.projeto-img {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-right: 50px;
+}
+
+.projeto-img-mobile {
+    display: none;
+}
+
+/* fim projeto */
+
+/* objetivos */
+
+.objetivos {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #06141B, #0A212C 10%, #D9D9D9);
+    display: flex;
+    flex-direction: column;
+}
+
+.objetivos-direção {
+    display: flex;
+    justify-content: flex-start;
+    width: 23px;
+}
+
+.objetivos-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.objetivos-textos {
+    display: flex;
+    flex-direction: row;
+    padding-top: 100px;
+    padding-left: 143px;
+    gap: 205px;
+
+}
+
+.objetivos-titulos {
+    display: flex;
+    flex-direction: column;
+    gap: 100px;
+}
+
+.objetivos-titulo1 {
+    width: 291px;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+.objetivos-titulo2 {
+    width: 329px;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+.objetivos-titulo3 {
+    width: 399px;
+    font-weight: 400;
+    font-size: 30px;
+    color: white;
+}
+
+.objetivos-parags {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 72px;
+}
+
+.objetivos-parag1 {
+    width: 564px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.objetivos-parag2 {
+    width: 560px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.objetivos-parag3 {
+    width: 560px;
+    font-weight: 400;
+    font-size: 20px;
+    color: white;
+}
+
+.objetivos-textos-mobile {
+    display: none;
+}
+
+/* fim objetivos */
+
+/* público alvo */
+
+.publico-alvo {
+    width: 100%;
+    height: 100vh;
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.publico-direção {
+    display: flex;
+}
+
+.publico-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 400;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: #06141B;
+}
+
+.publico-textos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-left: 143px;
+    padding-top: 90px;
+    gap: 105px;
+}
+
+.publico-titulo {
+    width: 281px;
+    height: 72px;
+    font-size: 30px;
+    font-weight: 400;
+    color: #06141B;
+}
+
+.publico-parags {
+    display: flex;
+    flex-direction: row;
+    gap: 200px;
+}
+
+.publico-parag1 {
+    width: 386px;
+    height: 150px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #06141B;
+}
+
+.publico-parag2 {
+    width: 370px;
+    height: 150px;
+    font-size: 20px;
+    font-weight: 400;
+    color: #06141B;
+}
+
+.linha-vertical {
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    border-right: 1px solid #06141B;
+}
+
+/* fim público alvo */
+
+/* benefícios */
+
+.beneficios {
+    width: 100%;
+    height: 100vh;
+    background-image: url(../assets/images/backgroundBeneficios.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+   justify-content: flex-start;
+   flex-direction: column;
+}
+
+.beneficios-direção {
+    display: flex;
+    
+}
+
+.beneficios-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.beneficios-textos {
+    display: flex;
+    align-items: center;
+    padding-left: 10%;
+    padding-top: 15%;
+}
+
+.beneficios-parags {
+    display: flex;
+    flex-direction: column;
+    width: 811px;
+    height: 335px;
+    gap: 40px;
+}
+
+.beneficios-parag1 {
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+}
+
+/* fim benefícios */
+
+/* na pratica */
+
+.pratica {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(to bottom, #06141B, #123140 10%, #D9D9D9);
+    display: flex;
+    justify-content: flex-start;
+}
+
+.pratica-direção {
+    display: flex;
+}
+
+.pratica-direção-txt {
+    padding-top: 30px;
+    padding-left: 30px;
+    font-weight: 300;
+    font-size: 20px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.pratica-textos {
+    display: flex;
+    align-items: center;
+}
+
+.pratica-parags {
+    display: flex;
+    flex-direction: column;
+    width: 595px;
+    height: 383px;
+    gap: 40px;
+}
+
+.pratica-parag1 {
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+}
+
+.pratica-parag2 {
+    font-size: 35px;
+    font-weight: 400;
+    color: white;
+}
+/*carrossel*/
+.carrossel {
+    margin-left: 100px;
+    position: relative;
+    width: 80%;
+    max-width: 800px;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    display: flex;
+    background-color: white;
+}
+
+.carrossel-inner { /* container dos itens de carrossel */
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carrossel-item { /* item do carrossel */
+    min-width: 100%;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.carrossel-item img { /* imagem do item do carrossel */
+    width: 100%;
+    display: block;
+}
+
+.carrossel-btn { /* botões de controle do carrossel */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2rem;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.carrossel-btn.prev { /* botão de controle de slide anterior */
+    left: 10px;
+}
+
+.carrossel-btn.next { /* botão de controle de próximo slide */
+    right: 10px;
+}
+
+/* fim na pratica */
+
+/* footer */
+
+.rodapé {
+    background-color: #d9d9d9;
+    display: flex;
+    justify-content: center;
+    padding: 25px 50px;
+    width: 100%;
+}
+
+.rodapé-texto-txt {
+    opacity: 1;
+    transform: none;
+    transition: none;   
+}
+
+/* fim footer */
+
+/* responsividade */
+
+@media (max-width: 480px) { 
+    * {
+        margin: 0;
+        padding: 0; 
+        box-sizing: border-box;
+    }
+
+
+    .navegação {
+        padding: 18px 20px;
+        z-index: 1;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .menu.ativo .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .menu.ativo .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu.ativo .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        right: -100%;
+        top: 60px;
+        width: 100%;
+        height: 100%;
+        background-color: #06141B;
+        flex-direction: column;
+        gap: -10px;
+        transition: 0.4s;
+    }
+
+    .nav-menu.ativo {
+        right: 0;
+    }
+
+    .nav-item {
+        margin: 16px 0;
+    }
+
+    .inicio {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .inicio-textos {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 30px 130px 30px;
+    }
+
+    .inicio-titulo {
+        width: 100%;
+        height: 100%;
+        font-size: 80px;
+    }
+
+    .inicio-parag {
+        width: 100%;
+        height: 100%;
+        font-size: 27px;
+    }
+
+    .problematica {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .problematica-textos {
+        width: 100%;
+        height: 100%;
+        padding: 100px 30px 130px 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .problematica-titulo {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 70px;
+    }
+
+    .problematica-parags {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        gap:30px;
+    }
+
+    .problematica-parag1 {
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        font-size: 20px;
+        color: white;
+    }
+
+    .problematica-parag2 {
+        width: 100%;
+        height: 100%;
+        font-weight: 400;
+        font-size: 20px;
+        color: white;
+    }
+
+    .projeto {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .projeto-textos {
+        display: flex;
+        padding: 100px 30px 30px 30px;
+        flex-direction: column;
+        gap: 50px;
+    }
+
+    .projeto-titulo {
+        font-size: 70px;
+    }
+
+    .projeto-parag {
+        font-size: 18px;
+        font-weight: 300;
+    }
+
+    .projeto-img {
+        display: none;
+    }
+
+    .projeto-img-mobile {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        padding: 50px 30px 80px 30px;
+    }
+
+    .objetivos {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .objetivos-textos {
+        display: none;
+    }
+
+    .objetivos-textos-mobile {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        padding: 100px 60px 110px 30px;
+        gap: 20px;
+    }
+
+    .objetivos-titulo1-mobile {
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .objetivos-titulo2-mobile {
+        padding-top: 70px;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+    .objetivos-titulo3-mobile {
+        padding-top: 70px;
+        color: white;
+        font-size: 30px;
+        font-weight: 400;
+    }
+
+    .objetivos-parag1-mobile {
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .objetivos-parag2-mobile {
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+    }
+    .objetivos-parag3-mobile {
+        color: white;
+        font-size: 18px;
+        font-weight: 400;
+    }
+
+    .publico-alvo {
+        width: 100%;
+        height: 100%;
+        padding-top: 40px;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .publico-textos {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 70px 130px 30px;
+        gap: 60px;
+    }
+
+    .publico-titulo {
+        width: 100%;
+        height: 100%;
+    }
+
+    .publico-parags {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .publico-parag1 {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+
+    .publico-parag2 {
+        width: 100%;
+        height: 100%;
+        font-size: 18px;
+    }
+
+    .linha-vertical {
+        display: none;
+    }
+
+    .beneficios {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .beneficios-textos {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 30px 130px 30px;
+        gap: 60px;
+    }
+
+    .beneficios-parags {
+        width: 100%;
+        height: 100%;
+    }
+
+    .beneficios-parag1 {
+        font-size: 22px;
+    }
+
+    .pratica {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .pratica-textos {
+        display: flex;
+        flex-direction: column;
+        padding: 100px 30px 130px 30px;
+        gap: 60px;
+    }
+
+    .pratica-parags {
+        width: 100%;
+        height: 100%;
+    }
+
+    .pratica-parag1 {
+        font-size: 24px;
+    }
+
+    .pratica-parag2 {
+        font-size: 24px;
+    }
+    .carousel {
+        margin-left: 0;
+        position: relative;
+        width: 80%;
+        max-width: 800px;
+        overflow: hidden;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        display: flex;
+    }
+    
+    .carousel-inner {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+    }
+    
+    .carousel-item {
+        min-width: 100%;
+        transition: opacity 0.5s ease-in-out;
+    }
+    
+    .carousel-item img {
+        width: 100%;
+        display: block;
+    }
+    
+    .carousel-control {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        border: none;
+        color: white;
+        font-size: 2rem;
+        padding: 10px;
+        cursor: pointer;
+    }
+    
+    .carousel-control.prev {
+        left: 10px;
+    }
+    
+    .carousel-control.next {
+        right: 10px;
+    }
+}
