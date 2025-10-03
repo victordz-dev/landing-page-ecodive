@@ -6,7 +6,6 @@ Bem-vindo ao repositório da **EcoDive**, uma landing page desenvolvida para des
 
 - **HTML5** → Estrutura semântica da aplicação
 - **CSS3** → Estilização base e responsividade
-- **SCSS** → Organização modular e reaproveitamento de estilos
 - **JavaScript (JS)** → Interatividade e dinamismo da página
 
 ## 🎨 Conceitos Aplicados
